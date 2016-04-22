@@ -122,7 +122,7 @@
  </script>
  </head>
 
- <body>
+ <body onLoad=initialise();>
   <div data-role="page" id="pageone">
     <div data-role="header">
     <h1>Region of Interest Analysis</h1></div><!-- /header -->
@@ -150,7 +150,25 @@
         context.font = '20pt Calibri';
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
+        function initialise() {
+         canvas.addEventListener("touchstart", doTouchStart, false);
+         canvas.addEventListener("mousedown", doMouseDown, false);
+        }
+
+        function doTouchStart() {
+         event.preventDefault();
+         canvas_x = event.targetTouches[0].pageX;
+         canvas_y = event.targetTouches[0].pageY;
+         alert("X=" + canvas_x + "Y=" + canvas_Y);
+        }
+
+        function doMouseDown() {
+         canvas_x = event.pageX;
+         canvas_y = event.pageY;
+         alert("X=" + canvas_x + "Y=" + canvas_y);
+        }
       </script>
+      <!-- added functions to recognise soordinates of pixel clicked -->
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
