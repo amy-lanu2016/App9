@@ -14,7 +14,9 @@
  
   Authors in chronological order of contribution:
   Author 1: Timothy E. Riedel
-  Author 2:
+  Author 2:Amy Grossman
+  Author 3: Quinn Kealey
+  Author 4: 
   
   References:
   http://docs.webplatform.org/wiki/concepts/programming/drawing_images_onto_canvas#Loading_the_image_programmatically
@@ -24,10 +26,10 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  blah, blah, blah,
+  to upload a picture determine a region of interest and analyze the RBG values for it.
  
   Known Issues:
-  blah, blah, blah, blah
+  not finished coding and the picture wont upload
 -->
 
  <head>
@@ -119,6 +121,7 @@
     } // end of the else statement if file in NOT an image
   }); // end of the fileInput.addEventListener function
  } // end of the window.onload function
+ 
  </script>
  </head>
 
@@ -180,6 +183,23 @@
       <!-- added functions to recognise soordinates of pixel clicked -->
       <!-- added function that may or may not recognize the area aroung the selected pixel -->
       <!-- hopefully added an event listener -->
+      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+        var canvas2 = document.getElementById('myCanvas2');
+        var context2 = canvas2.getContext("2d");
+        context2.font = '20pt Calibri';
+        context2.fillStyle = "black";
+        context2.fillText("results will go here", 10, 20);
+        
+        var x1 = x-10;
+        var y1 = y-10;
+        var x2 = x+10;
+        var y2 = y+10;
+        img=getImageData(x1,y1,x2,y2);
+      </script>
+      <!-- added a new canvas and code to help define the ROI -->
+        
+      
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
