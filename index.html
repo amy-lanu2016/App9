@@ -176,13 +176,14 @@
          var imgData=ctx.getImageData(x-10, x+10, y-10, y+10)
          ctx.putImageData(imgData, 10, 70)
         }
-        document.getElementById("initialise();").addEventLIstener("click",function(){
+        document.getElementById("initialise();").addEventListener("click",function(){
         document.getElementById("copy()")
-        });
+        };
       </script>
       <!-- added functions to recognise soordinates of pixel clicked -->
       <!-- added function that may or may not recognize the area aroung the selected pixel -->
       <!-- hopefully added an event listener -->
+      <!-- fixed code -->
       <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas2 = document.getElementById('myCanvas2');
