@@ -16,7 +16,7 @@
   Author 1: Timothy E. Riedel
   Author 2:Amy Grossman
   Author 3: Quinn Kealey
-  Author 4: 
+  Author 4: Sarah
   
   References:
   http://docs.webplatform.org/wiki/concepts/programming/drawing_images_onto_canvas#Loading_the_image_programmatically
@@ -125,7 +125,7 @@
  </script>
  </head>
 
- <body onLoad=initialise();>
+ <body>
   <div data-role="page" id="pageone">
     <div data-role="header">
     <h1>Region of Interest Analysis</h1></div><!-- /header -->
@@ -134,7 +134,11 @@
       <a href="#pagetwo" data-role="button">continue to next page</a>
       </div><!-- /content -->
   </div><!-- /page -->
+ </body>
+ 
+ <body onLoad=initialise()>
       <!--made an intro page-->
+      <!-- moved initialise function -->
   <div data-role="page" id="pagetwo">
     <div data-role="header">
     <h1>Region of Interest Analysis</h1></div><!-- /header -->
@@ -156,6 +160,8 @@
         function initialise() {
          canvas.addEventListener("touchstart", doTouchStart, false);
          canvas.addEventListener("mousedown", doMouseDown, false);
+         canvas.addEventListener("touchstart", imagedata, false);
+         canvas.addEventListener("mousedown", imagedata, false);
         }
 
         function doTouchStart() {
@@ -169,6 +175,9 @@
          canvas_x = event.pageX;
          canvas_y = event.pageY;
          alert("X=" + canvas_x + "Y=" + canvas_y);
+        }
+        function imagedata() {
+         var imgData=context.getImageData(canvas_x -10,canvas_y - 10, 10, 10)
         }
         
         function copy()
