@@ -177,16 +177,16 @@
          alert("X=" + canvas_x + "Y=" + canvas_y);
         }
         function imagedata() {
-         var imgData=context.getImageData(canvas_x -10,canvas_y - 10, 10, 10)
-        }
-        
-        function copy()
-        {
-         var imgData=ctx.getImageData(x-10, x+10, y-10, y+10)
-         ctx.putImageData(imgData, 10, 70)
-        }
-        document.getElementById("initialise();").addEventListener("click",function(){
-        document.getElementById("copy()");
+         var imgData=context.getImageData(canvas_x -10,canvas_y - 10, 10, 10);
+         var data = imgData.data; 
+         for (var i = 0, n = data.length; i < n; i += 4) {
+          data [i+0]=[i+0]-[i+0];
+          data [i+1]=[i+1];
+          data [i+2]=[i+2]-[i+2];
+          data [i+3]=[i+3];
+         }
+         alert(data,50,50);
+         //*added the imagedat function *//
         }
       </script>
       <!-- added functions to recognise soordinates of pixel clicked -->
@@ -200,15 +200,12 @@
         context2.font = '20pt Calibri';
         context2.fillStyle = "black";
         context2.fillText("results will go here", 10, 20);
-        
-        var x1 = canvas_x-10;
-        var y1 = canvas_y-10;
-        var x2 = canvas_x+10;
-        var y2 = canvas_y+10;
-        img=getImageData(x1,y1,x2,y2);
+        context2.getImageData(imgData,10,70);
+       
       </script>
       <!-- added a new canvas and code to help define the ROI -->
       <!-- fixed code -->
+      <!-- added teh getImageData code -->
         
       
 
