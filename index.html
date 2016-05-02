@@ -201,11 +201,19 @@
         context2.fillStyle = "black";
         context2.fillText("results will go here", 10, 20);
         context2.getImageData(imgData,10,70);
-       
+       var data1 = data[i+1];
+       document.getElementById("data1").innerHTML = data1;
       </script>
       <!-- added a new canvas and code to help define the ROI -->
       <!-- fixed code -->
       <!-- added teh getImageData code -->
+      <!-- added a code to retrieve the data, possibly -->
+      <table border="1" style="width:100%">
+           <tr>
+               <td id="data1">$100</td>
+           </tr>
+      </table>
+      <!-- added a table to put data in -->
         
       
 
